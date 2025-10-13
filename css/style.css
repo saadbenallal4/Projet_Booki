@@ -1,4 +1,40 @@
 /****** General ***********/
+
+header img {
+    width: 100px;
+    margin-right: 50px;
+}
+
+header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    padding: 0 50px;
+     box-sizing: border-box; 
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav a {
+    color: black;
+    border-top: 3px solid transparent; 
+    text-decoration: none;
+    padding: 0 15px; 
+    border-bottom: 3px solid transparent; 
+    padding-bottom: 15px;
+}
+
+header nav a:hover {
+    color: #0065FC;
+    border-top: 3px solid#0065FC;
+}
 * {
     font-family: 'Raleway', sans-serif;
 }
@@ -20,8 +56,7 @@ body {
 
 .main-container {
     width: 100%;
-    max-width: 1440px;
-    padding: 0 50px;
+    max-width: 1440px; 
     box-sizing: border-box;
 }
 
