@@ -8,11 +8,14 @@ header img {
 header { 
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 100px;
+    align-items: flex-start;
+    flex-wrap: wrap;
     width: 100%;
     padding: 0 50px;
-     box-sizing: border-box; 
+    box-sizing: border-box; 
+    height: auto;
+    padding-bottom: 20px;
+    padding: 30px 50px 20px 50px;
 }
 
 header nav ul {
@@ -26,9 +29,12 @@ header nav a {
     color: black;
     border-top: 3px solid transparent; 
     text-decoration: none;
-    padding: 0 15px; 
     border-bottom: 3px solid transparent; 
     padding-bottom: 15px;
+}
+
+header nav ul li {
+    margin-right: 30px;
 }
 
 header nav a:hover {
@@ -37,6 +43,12 @@ header nav a:hover {
 }
 * {
     font-family: 'Raleway', sans-serif;
+}
+
+.header-text {
+    width: 100%;
+    margin-top: 20px;
+
 }
 
 :root {
@@ -59,6 +71,49 @@ body {
     max-width: 1440px; 
     box-sizing: border-box;
 }
+
+.barre-recherche {
+    display: flex;
+    align-items: center;
+    height: 49px;
+    margin-top: 30px;
+    max-width: 380px;
+}
+
+.barre-recherche button[type="submit"] {
+     background-color: #0065FC; 
+     color: white;
+     border: 1px solid #0065FC;
+     padding: 0 20px;
+     font-weight: 700;
+     height: 100%;
+     border-radius: 0 15px 15px 0;   
+}
+
+.icone-localisation {
+    display: flex;
+    background-color: #F2F2F2;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 0 0 15px; 
+    width: 49px; 
+    height: 100%
+}
+
+.icone-localisation i {
+    color: black;
+}
+
+.barre-recherche input[type="search"] {
+     border: 1px solid #F2F2F2;
+     border-left: none;
+     border-right: none;
+     padding: 0 10px;
+     height: 100%;
+     font-weight: 700; 
+     color: black;
+     flex-grow: 1;
+ }
 
 a {
     color: inherit;
@@ -161,15 +216,16 @@ footer {
     width: 100%;
     background-color: #F2F2F2;
     max-width: 1440px;
-    padding: 30px 0; 
+    padding: 20px 0; 
     
 
 .footer-content {
-    max-width: 1440px; 
-    margin: 0 auto;
     padding: 0 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 300px;
+  
+  
 }   
 }
 footer h3 {
