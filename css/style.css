@@ -121,15 +121,6 @@ body {
      flex-grow: 1;
  }
 
- .search-icon-mobile {
-    display: none; 
-}
-
-/* Le texte "Rechercher" est visible par défaut */
-.search-text-desktop {
-    /* Utilisez 'display: block' ou 'inline-block' */
-    display: block; 
-}
 
 a {
     color: inherit;
@@ -426,9 +417,6 @@ footer a {
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
 
-.search-text-desktop {
-    display: block; /* Ou inline, selon le style initial du bouton */
-}
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -479,111 +467,86 @@ footer a {
     header {
         flex-direction: column; 
         align-items: center; 
-        /* Retire le padding/alignement latéral du desktop */
         justify-content: center;
         padding: 0;
     }
 
-    /* Centrer le logo et lui donner sa pleine largeur (pas de margin-right) */
     header img {
         width: 100px;
-        margin: 20px auto 0 auto; /* Centrage et petite marge supérieure */
+        margin: 20px auto 0 auto; 
     }
 
-    /* Le conteneur de navigation */
     header nav {
-        width: 100%; /* Prend toute la largeur sous le logo */
+        width: 100%; 
         margin-top: 15px;
     }
 
-    /* Les éléments <li> (Hébergements/Activités) */
     header nav ul li {
-        width: 50%; /* Chaque lien prend 50% de la largeur */
+        width: 50%; 
         margin: 0;
         text-align: center;
-        /* Bordure grise par défaut en BAS (pré-soulignement) */
         border-bottom: 2px solid var(--main-bg-color); 
-        /* Écrase la marge desktop (30px) */
     }
+     
     
-    /* Le lien <a> lui-même */
-    header nav a {
-        display: block; /* Rendre le lien plein bloc pour un meilleur clic */
-        padding: 15px 0 15px 0; /* Conserve le padding vertical pour la hauteur */
-        /* 🚀 Correction clé : Assure que le border-top du desktop est masqué */
+    header nav li a {
+        display: block; 
+        padding: 15px 0 15px 0; 
         border-top: none !important;
         border-bottom: none !important;
     }
 
-    /* 🚀 CORRECTION CLÉ : Le survol/actif devient un SOULIGNEMENT (border-bottom) */
     header nav a:hover {
         color: var(--main-color);
-        /* 1. Masque la bordure bleue du HAUT */
         border-top: none !important; 
-        /* 2. Et c'est la bordure du LI qui devient bleue, pas celle du A.
-           Pour que ça fonctionne, il faut mettre le style sur le LI:hover et non le A:hover */
     }
 
-    /* Application du survol/actif sur le LI (l'élément le plus large) */
+   
     header nav li:hover {
         border-bottom: 2px solid var(--main-color);
     }
-    /* S'assurer que le LI:hover ne casse pas le style du LI */
+   
     header nav li:hover a {
         color: var(--main-color);
     }
 
-    /* ************************************************************ */
-    /* 2. BARRE DE RECHERCHE (Loupe) */
-    /* ************************************************************ */
-
     .barre-recherche {
-        /* Pleine largeur */
+    
         max-width: 100%;
         width: 100%;
     }
 
-    /* Le champ de saisie reste pleine hauteur */
+ 
     .barre-recherche input[type="search"] {
-        flex-grow: 1; /* Il prend tout l'espace */
+        flex-grow: 1; 
     }
 
     .search-text-desktop {
         display: none; 
     }
     
-    /* 2. Affiche l'icône de la loupe */
     .search-icon-mobile {
         display: block; 
         font-size: 1.2em; 
-        color: white; /* La loupe est blanche sur le fond bleu */
+        color: white;
     }
 
-    /* 3. Ajuste le bouton pour le format carré mobile */
     .search-button {
         width: 50px; 
-        /* IMPORTANT : Le padding doit être annulé pour la faire tenir */
         padding: 0; 
-        
-        /* Assurez-vous que l'input à gauche n'est pas arrondi à droite */
-        
-        /* Ajustement de la bordure : supprime l'arrondi gauche et conserve l'arrondi droit (15px) */
         border-top-left-radius: 0;
         border-bottom-left-radius: 0; 
         border-top-right-radius: 15px; 
         border-bottom-right-radius: 15px;
-        
-        /* Centrer la loupe dans le carré */
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-/* 💡 Astuce : Ajustez la taille du bouton pour qu'il soit un carré parfait */
     .search-button {
         width: 50px; 
         padding: 0; 
-        border-radius: 0 15px 15px 0; /* Assurez-vous que seul le côté droit est arrondi */
+        border-radius: 0 15px 15px 0; 
     }
        
     
@@ -612,21 +575,17 @@ footer a {
     }
 
     .hebergements-and-populaires {
-        /* Empilement des sections (elles étaient côte à côte sur desktop) */
         flex-direction: column; 
-        padding: 0; /* Retire le padding excessif */
+        padding: 0; 
     }
 
-    /* La section Populaire doit monter */
     .populaires {
         order: 1; 
         width: 100%;
-        /* La section populaire garde son fond gris sur mobile */
-        background-color: var(--main-bg-color); /* #F2F2F2 */
+        background-color: var(--main-bg-color); 
         border-radius: 0;
-        /* Ajoute le padding interne de 20px pour aligner le contenu avec le .main-container */
         padding:30px 20px 20px 20px; 
-        margin-bottom: 20px; /* Écrase les marges desktop si elles existent */
+        margin-bottom: 20px; 
     }
 
     .main-container .populaires {
@@ -635,38 +594,35 @@ footer a {
     }
 
     .populaires-cards {
-        flex-direction: column; /* Empilement vertical des cartes */
+        flex-direction: column; 
         gap: 15px;
     }
    
 
-    /* Le lien <a> qui contient la carte */
+   
     .populaires-cards a {
         width: 100%; 
-        /* La marge du bas est gérée par le gap du parent */
         margin: 0; 
     }
     
-    /* La carte elle-même doit retrouver son format vertical */
+   
     .populaires-cards .card {
        display: flex;
        flex-direction: row;
-        height: auto; /* La hauteur n'est plus fixe */
+        height: auto; 
     }
 
-    /* L'image de la carte populaire (l'image passe en haut) */
+
     .populaires-cards .card img {
         width: 35%; 
-        height: 140px; /* Hauteur ajustée pour le mobile */
-        /* Assurez-vous que les coins en bas de l'image sont plats pour coller au texte */
+        height: 140px; 
         border-radius: 20px 0 0 20px; 
         object-fit: cover;
     }
 
-    /* Le contenu (texte et étoiles) sous l'image */
+   
     .populaires-cards .card-content {
         width: 65%;
-        /* Retrouver un padding interne pour le texte */
         padding: 10px; 
         justify-content: space-between;
     }
@@ -675,83 +631,72 @@ footer a {
         background-color: white; 
     }
 
-    /* La section Hébergements descend */
+    
     .hebergements {
         order: 2; 
-        width: 100%; /* Prend toute la largeur */
-        background-color: white; /* Assurez-vous que le fond est blanc */
-        padding: 30px 20px; /* Ajoute le padding interne de 20px */
+        width: 100%; 
+        background-color: white; 
+        padding: 30px 20px; 
     }
 
     .hebergements-cards a {
-        width: 100%; /* Prend toute la largeur disponible */
-        margin: 0; /* Retire les marges externes */
-        /* 🚀 CORRECTION CLÉ : Les cartes sont plus allongées verticalement */
-        height: 220px; /* Une hauteur fixe pour qu'elles soient plus hautes */
+        width: 100%;
+        margin: 0; 
+        height: 220px; 
          
     }
 
     .activities-section {
-        /* On retire les padding larges du desktop/tablette */
+        
         padding: 30px 20px; 
         width: 100%;
         box-sizing: border-box; 
     }
-    
-    /* ************************************************************ */
-    /* 2. CARTES ACTIVITÉS (Empilement et Pleine Largeur) */
-    /* ************************************************************ */
 
     .activities-cards {
-        /* 🚀 Correction clé : Empilement des cartes */
         flex-direction: column; 
-        gap: 15px; /* Espace entre les cartes */
+        gap: 15px; 
         margin-top: 15px;
     }
 
-    /* Le lien <a> qui contient la carte */
+  
     .activities-cards a {
-        /* Chaque carte prend la pleine largeur */
         width: 100%; 
-        flex: none; /* Annule le flex: 1 du desktop */
+        flex: none; 
     }
     
-    /* La carte elle-même */
+   
     .activity-card {
         width: 100%;
-        /* 🚀 Correction clé : Hauteur de la carte réduite pour le mobile */
-        height: 200px; 
+        height: 200px;
         overflow: hidden; 
-        /* Le display: flex; et flex-direction: column; sont conservés du desktop */
+        
     }
 
-    /* L'image de la carte */
     .activity-card img {
         width: 100%;
-        /* 🚀 Correction clé : L'image prend la majorité de la carte */
-        height: 75%; /* L'image est grande comme sur la capture */
+        height: 75%; 
         object-fit: cover; 
     }
     
-    /* Le titre (texte sous l'image) */
+    
     .activity-card h3 {
-        /* Le reste de la hauteur */
+     
         height: 25%; 
-        display: flex; /* Permet de centrer verticalement le titre */
+        display: flex; 
         align-items: center; 
         font-size: 1em; 
-        padding-left: 15px; /* Aligner le texte */
+        padding-left: 15px; 
     }
 
     footer {
-        /* Assurez-vous que le footer prend la pleine largeur de l'écran */
+       
         width: 100%;
-        margin-top: 30px; /* Ajoute un espace après la section Activités */
-        padding: 0; /* Retire le padding vertical du Desktop */
+        margin-top: 30px; 
+        padding: 0; 
     }
 
     .footer-content {
-        /* 🚀 CORRECTION CLÉ : Empilement des trois colonnes */
         flex-direction: column; 
     }
        
