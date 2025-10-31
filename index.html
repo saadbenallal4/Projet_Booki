@@ -20,8 +20,8 @@
             <img src="images/logo/Booki.png" alt="Logo Booki">
             <nav> 
                 <ul>
-                   <li><a href="#">Hébergements</a></li>
-                   <li><a href="#">Activités</a></li>
+                   <li><a href="#hebergements">Hébergements</a></li>
+                   <li><a href="#activites">Activités</a></li>
                 </ul>       
             </nav>
         
@@ -33,18 +33,18 @@
         </header>
         <main>
 
-            <form class="barre-recherche" action="#" method="get">
-            <div class="icone-localisation">
-                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            </div>
-            <input type="search" value="Marseille, France">
-            <button type="submit" class="search-button"></button>
-            <button type="submit">Rechercher>
-                <span class="search-text-desktop">Rechercher</span>
-        
-        <i class="fa-solid fa-magnifying-glass search-icon-mobile" aria-hidden="true"></i>
-    </button>
-        </form>
+<form class="barre-recherche" action="#" method="get">
+  <div class="icone-localisation">
+    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+  </div>
+
+  <input type="search" placeholder="Marseille, France">
+  <button type="submit" class="search-button">
+    <span class="search-text-desktop">Rechercher</span>
+    <i class="fa-solid fa-magnifying-glass search-icon-mobile" aria-hidden="true"></i>
+  </button>
+</form>
+
 
         <section class="filters-section">
     <h2>Filtres</h2>
@@ -69,15 +69,15 @@
         </div>
 </section>
 
-<div class="info-logements">
-        <i class="fa-solid fa-info-circle"></i>
-    <p>Plus de 500 logements sont disponibles dans cette ville</p>
-</div>
+<div class="info">
+            <span class="cercle"><i class="fa-solid fa-info fa-xs"></i></span>
+            <p> Plus de 500 logements sont disponibles dans cette ville</p>
+        </div>
 
 <div class="hebergements-and-populaires">
-    
-    <section class="hebergements">
+        <section class="hebergements" id="hebergements">
         <h2 class="section-title">Hébergements à Marseille</h2>
+       
         <div class="hebergements-cards">
             
             <a href="#">
@@ -266,7 +266,9 @@
                 </section>
             </div>
 
-            <section class="activities-section">
+             <section class="activites">
+
+            <section class="activities-section" id="activites"></section>
     <h2 class="section-title">Activités à Marseille</h2>
     
     <div class="activities-cards">

@@ -43,11 +43,9 @@ header nav a:hover {
     font-family: 'Raleway', sans-serif;
 }
 
-
 .header-text {
     width: 100%;
     margin-top: 20px;
-
 }
 
 :root {
@@ -65,7 +63,7 @@ body {
     justify-content: center;
     margin: 0;
     padding: 0;
- 
+
 }
 
 .main-container {
@@ -95,6 +93,13 @@ body {
      border-radius: 0 15px 15px 0;   
      cursor: pointer;
 }
+.search-text-desktop {
+  display: inline;
+}
+
+.search-icon-mobile {
+  display: none;
+}
 
 .icone-localisation {
     display: flex;
@@ -120,7 +125,6 @@ body {
      color: black;
      flex-grow: 1;
  }
-
 
 a {
     color: inherit;
@@ -168,23 +172,28 @@ a {
     background-color: #DEEBFF;
 }
 
-.info-logements {
-   display: flex;
-   align-items: center; 
-   margin-top: 30px;
-   margin-bottom: 30px;
+.cercle {
+  display: inline-flex;            
+  align-items: center;
+  justify-content: center;
+  width: 24px;                     
+  height: 24px;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;          
+    
+}
+.info i {
+    padding-top:7px;
+    width: 4px;
+    height: 10px;
 }
 
-.info-logements i {
-    color:#0065FC;
-    margin-right: 10px; 
-    font-size: 1.1em;
-    background-color: white;
-}
 
-.info-logements p {
-    margin: 0;
-    font-size: 1em;
+.info {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
 }
 
 .card {
@@ -372,14 +381,13 @@ a {
 }
 
 footer {
-    margin-top: 0%;
+    margin-top: 60px;
     width: 100%;
     background-color: #F2F2F2;
     max-width: 1440px;
     padding: 20px 0;
 } 
     
-
 .footer-content {
     padding: 0 50px;
     display: flex;
@@ -417,6 +425,15 @@ footer a {
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
 
+ .search-text-desktop {
+  display: inline;
+}
+
+.search-icon-mobile {
+  display: none;
+}
+
+
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -449,14 +466,11 @@ footer a {
     }
 
     footer {
-       display: flex;
-        justify-content: space-around; 
-        padding: 30px 50px;
-    }  
     
+    padding: 30px 50px;
+  }
 }
 
-  
 @media (max-width: 768px) {
 
  .main-container {
@@ -501,7 +515,6 @@ footer a {
         border-top: none !important; 
     }
 
-   
     header nav li:hover {
         border-bottom: 2px solid var(--main-color);
     }
@@ -521,34 +534,23 @@ footer a {
         flex-grow: 1; 
     }
 
-    .search-text-desktop {
-        display: none; 
-    }
-    
-    .search-icon-mobile {
-        display: block; 
-        font-size: 1.2em; 
-        color: white;
-    }
+  .search-text-desktop {
+    display: none;
+  }
 
-    .search-button {
-        width: 50px; 
-        padding: 0; 
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0; 
-        border-top-right-radius: 15px; 
-        border-bottom-right-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .search-icon-mobile {
+    display: inline-block;
+    font-size: 1.2em;
+    color: white;
+  }
 
-    .search-button {
-        width: 50px; 
-        padding: 0; 
-        border-radius: 0 15px 15px 0; 
-    }
-       
+  .search-button {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 15px 15px 0;
+  }
     
     .filters-section {
         flex-direction: column; 
@@ -605,13 +607,11 @@ footer a {
         margin: 0; 
     }
     
-   
     .populaires-cards .card {
        display: flex;
        flex-direction: row;
         height: auto; 
     }
-
 
     .populaires-cards .card img {
         width: 35%; 
@@ -620,7 +620,6 @@ footer a {
         object-fit: cover;
     }
 
-   
     .populaires-cards .card-content {
         width: 65%;
         padding: 10px; 
@@ -631,7 +630,6 @@ footer a {
         background-color: white; 
     }
 
-    
     .hebergements {
         order: 2; 
         width: 100%; 
@@ -659,7 +657,6 @@ footer a {
         margin-top: 15px;
     }
 
-  
     .activities-cards a {
         width: 100%; 
         flex: none; 
@@ -669,8 +666,7 @@ footer a {
     .activity-card {
         width: 100%;
         height: 200px;
-        overflow: hidden; 
-        
+        overflow: hidden;    
     }
 
     .activity-card img {
@@ -678,7 +674,6 @@ footer a {
         height: 75%; 
         object-fit: cover; 
     }
-    
     
     .activity-card h3 {
      
